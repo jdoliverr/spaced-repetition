@@ -1,1 +1,39 @@
+.Header {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  margin-bottom: 40px;
+}
 
+.Header h1 {
+  margin: 0;
+  text-decoration: none !important;
+}
+
+.Header a {
+  color: #444;
+  text-decoration: none;
+}
+
+.Header__no-login {
+  justify-content: space-evenly;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 30%;
+}
+
+.Header__logged-in {
+}
+
+.submission-options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 100px;
+  margin-top: 40px;
+}

@@ -1,3 +1,8 @@
+.Hyph {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
 .Input,
 .Textarea {
   border: 1px solid #ddd;
@@ -17,4 +22,28 @@
 
 .Textarea {
   resize: vertical;
+}
+
+.Button {
+  order: 1px solid #aaa;
+  background-color: #eee;
+  font-size: 1.1em;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-weight: bold;
+}
+
+.Required {
+  color: #ca1551;
+  font-family: Arial;
+  font-weight: bold;
+}
+
+.Section {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.Section--list {
+  margin-left: 10px;
+  margin-right: 10px;
 }
