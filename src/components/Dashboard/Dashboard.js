@@ -7,12 +7,12 @@ export default class Dashboard extends Component {
   componentDidMount() {
     this.context.clearError();
     languageService
-      .getLanguage()
-      .then(this.context.setLanguage)
-      .catch(this.context.setError);
-    languageService
       .getWords()
       .then(this.context.setLanguageWords)
+      .catch(this.context.setError);
+    languageService
+      .getLanguage()
+      .then(this.context.setLanguage)
       .catch(this.context.setError);
   }
   renderLanguage() {
