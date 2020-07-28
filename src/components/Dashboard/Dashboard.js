@@ -8,23 +8,33 @@ export default class Dashboard extends Component {
     this.context.clearError();
     languageService
       .getWords()
-      .then(this.context.setLanguageWords)
-      .catch(this.context.setError);
+      .then((data) => this.context.setLanguageWords(data.words));
+    //     .catch(this.context.setError);
     languageService
-      .getLanguage()
-      .then(this.context.setLanguage)
+      .getHead()
+      .then(this.context.setHead)
       .catch(this.context.setError);
   }
-  renderLanguage() {
-    const { language = {} } = this.context;
-    return <div>{language}</div>;
+  renderHead() {
+    const { head = {} } = this.context;
+    return <div>{head}</div>;
   }
   renderWords() {
     const { languageWords = [] } = this.context;
-    return languageWords.map((word) => <text>{word}</text>);
+    return [
+      languageWords.map((word, i) => (
+        <li className="word-container" key={`word$ {i}`}>
+          <h3>{word.original}</h3>
+          <div className="word-specifics-details"></div>
+          <p className="answer-count">{`Times Correct: ${word.correct_count}`}</p>
+          <p className="answer-count">{`Times Inorrect: ${word.incorrect_count}`}</p>
+        </li>
+      )),
+    ];
   }
 
   render() {
+    console.log(this.renderWords());
     const { error } = this.context;
     return (
       <>
@@ -33,7 +43,7 @@ export default class Dashboard extends Component {
           {error ? (
             <p className="error-text">Something went wrong, please try again</p>
           ) : (
-            (this.renderLanguage(), this.renderWords())
+            this.renderWords()
           )}
         </section>
       </>

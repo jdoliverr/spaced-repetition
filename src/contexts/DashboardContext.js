@@ -1,12 +1,12 @@
 import React from "react";
 
 const DashboardContext = React.createContext({
-  language: {},
+  head: {},
   languageWords: [],
   numberCorrect: {},
   numberIncorrect: {},
   totalScore: {},
-  setLanguage: () => {},
+  setHead: () => {},
   setLanguageWords: () => {},
   setNumberCorrect: () => {},
   setNumberIncorrect: () => {},

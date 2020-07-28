@@ -1,13 +1,13 @@
 import config from "../config";
-import TokenService from './token-service';
+import TokenService from "./token-service";
 
 const languageService = {
   getWords() {
     return fetch(`${config.API_ENDPOINT}/language`, {
-      method: 'GET',
+      method: "GET",
       headers: {
-        'authorization': `bearer ${TokenService.getAuthToken()}`
-      }
+        authorization: `bearer ${TokenService.getAuthToken()}`,
+      },
     })
       .then((res) =>
         !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
@@ -16,13 +16,13 @@ const languageService = {
         console.error(err.message);
       });
   },
-  getLanguage() {
-    console.log(TokenService.getAuthToken())
+  getHead() {
+    console.log(TokenService.getAuthToken());
     return fetch(`${config.API_ENDPOINT}/language/head`, {
-      method: 'GET',
+      method: "GET",
       headers: {
-        'authorization': `bearer ${TokenService.getAuthToken()}`
-      }
+        authorization: `bearer ${TokenService.getAuthToken()}`,
+      },
     })
       .then((res) =>
         !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
