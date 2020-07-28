@@ -1,6 +1,6 @@
 import config from "../config";
 
-const LanguageService = {
+const languageService = {
   getWords() {
     return fetch(`${config.API_ENDPOINT}/`)
       .then((res) =>
@@ -21,4 +21,4 @@ const LanguageService = {
   },
 };
 
-export default LanguageService;
+export default languageService;
