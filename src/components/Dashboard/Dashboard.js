@@ -23,7 +23,7 @@ export default class Dashboard extends Component {
     const { languageWords = [] } = this.context;
     return [
       languageWords.map((word, i) => (
-        <li className="word-container" key={`word$ {i}`}>
+        <li className="word-container" key={`word ${i}`}>
           <h3>{word.original}</h3>
           <div className="word-specifics-details"></div>
           <p className="answer-count">{`Times Correct: ${word.correct_count}`}</p>
