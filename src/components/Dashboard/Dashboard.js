@@ -40,6 +40,7 @@ export default class Dashboard extends Component {
       <>
         <section className="Dashboard">
           <h2>Dashboard</h2>
+          <a className="learn-route-link">Get to practicing!</a>
           {error ? (
             <p className="error-text">Something went wrong, please try again</p>
           ) : (
