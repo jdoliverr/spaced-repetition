@@ -84,7 +84,7 @@ class LearningRoute extends Component {
                   ? "You were correct! :D"
                   : "Good try, but not quite right :("}
               </h2>
-              <p>Your total score is:{this.state.nextWord.totalScore}</p>
+              <p>Your total score is: {this.state.nextWord.totalScore}</p>
             </main>
             <main className="translation-feedback DisplayFeedback">
               <p>
@@ -101,7 +101,7 @@ class LearningRoute extends Component {
         ) : (
           <main>
             <p>
-              Your total score is:{" "}
+              Your total score is: {" "}
               {this.state.nextWord.totalScore
                 ? this.state.nextWord.totalScore
                 : this.state.wordData.totalScore}
