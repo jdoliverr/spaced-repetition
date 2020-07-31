@@ -1,15 +1,16 @@
 import React, { Component } from "react";
 import DashboardContext from "../../contexts/DashboardContext";
 import languageService from "../../services/language-service";
-import './Dashboard.css';
+import "./Dashboard.css";
 
 export default class Dashboard extends Component {
   static contextType = DashboardContext;
   componentDidMount() {
     this.context.clearError();
-    languageService
-      .getWords()
-      .then((data) => this.context.setLanguageWords(data.words));
+    languageService.getWords().then((data) => {
+      this.context.setLanguageWords(data.words);
+      this.context.setLanguage(data.language);
+    });
     //     .catch(this.context.setError);
     languageService
       .getHead()
@@ -17,8 +18,8 @@ export default class Dashboard extends Component {
       .catch(this.context.setError);
   }
   renderHead() {
-    const { head = {} } = this.context;
-    return <div>{head}</div>;
+    const { language = {} } = this.context;
+    return <h2>{language.name}</h2>;
   }
   renderWords() {
     const { languageWords = [] } = this.context;
@@ -35,23 +36,20 @@ export default class Dashboard extends Component {
   }
 
   render() {
-    const { error, totalScore } = this.context;
-    console.log(totalScore)    
+    const { error, language } = this.context;
     return (
       <>
         <section className="Dashboard">
           <h2>Dashboard</h2>
-          <h2>Test language 1</h2>
-          <section>Total correct answers:7</section>
+          {this.renderHead()}
+          <section>Total correct answers: {language.total_score}</section>
           <a className="learn-route-link" href="/learn">
             Get to practicing!
           </a>
           {error ? (
             <p className="error-text">Something went wrong, please try again</p>
           ) : (
-            <ul>
-            {this.renderWords()}
-            </ul>
+            <ul>{this.renderWords()}</ul>
           )}
         </section>
       </>
