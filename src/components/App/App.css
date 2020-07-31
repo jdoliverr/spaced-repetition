@@ -3,6 +3,7 @@
   padding: 20px;
   /* max-width: 500px; */
   margin: 0 auto;
+  font-size: 18px;
 }
 
 .App__header {
@@ -15,6 +16,14 @@
   overflow: auto;
   margin-top: 10px;
   padding-bottom: 40px;
+}
+
+.signup-head, .app-description {
+  text-align: center;
+}
+
+.alredy-have-account {
+  margin: 15px;
 }
 
 .translate-word-page {
@@ -36,6 +45,18 @@ form {
   border-radius: 25px;
 }
 
+.LoginForm {
+  height: 250px;
+}
+
+.registration-form {
+  height: 400px;
+}
+
+.login-head {
+  text-align: center;
+}
+
 #learn-guess-input {
   width: 200px;
 }
@@ -43,6 +64,11 @@ form {
 .submit-button {
   width: 125px;
   height: 45px;
+}
+
+.word-cycle-button {
+  height: 40px;
+  margin: 15px;
 }
 
 @media only screen and (min-width: 700px) {

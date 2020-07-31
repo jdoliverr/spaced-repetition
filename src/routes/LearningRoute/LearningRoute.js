@@ -88,7 +88,7 @@ class LearningRoute extends Component {
             </main>
             <main className="translation-feedback DisplayFeedback">
               <p>
-                {`The correct translation for ${this.state.wordData.nextWord} was ${this.state.nextWord.answer} and you chose ${this.state.guess}!`}
+                {`The correct translation for "${this.state.wordData.nextWord}" was "${this.state.nextWord.answer}" and you chose "${this.state.guess}"!`}
               </p>
               <button
                 className="word-cycle-button"
