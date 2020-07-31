@@ -37,7 +37,7 @@ class Header extends Component {
   render() {
     return (
       <nav className="Header">
-        <h1>
+        <h1 className="app-name-head">
           Spaced repetition
           {/* <Link to="/">Spaced Repetition</Link> */}
         </h1>

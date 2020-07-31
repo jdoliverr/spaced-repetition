@@ -1,7 +1,7 @@
 .App {
   height: 100vh;
   padding: 20px;
-  max-width: 500px;
+  /* max-width: 500px; */
   margin: 0 auto;
 }
 
@@ -15,4 +15,46 @@
   overflow: auto;
   margin-top: 10px;
   padding-bottom: 40px;
+}
+
+.translate-word-page {
+  text-align: center;
+  padding: 0;
+}
+
+form {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid black;
+  padding: 20px;
+  word-wrap: normal;
+  height: 175px;
+  border-radius: 25px;
+}
+
+#learn-guess-input {
+  width: 200px;
+}
+
+.submit-button {
+  width: 125px;
+  height: 45px;
+}
+
+@media only screen and (min-width: 700px) {
+  form {
+    width: 50%;
+    height: 250px;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  form {
+    width: 40%;
+    height: 300px;
+  }
 }

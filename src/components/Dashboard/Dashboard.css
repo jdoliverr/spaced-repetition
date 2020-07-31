@@ -1,3 +1,66 @@
-ul {
-    list-style: none;
+.Dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+ul {
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.sub-head {
+    margin: 15px;
+    font-size: 26px;
+}
+
+p.answer-count {
+    margin: 5px;
+}
+
+.word-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 25px;
+}
+
+h4.dash-word {
+    margin: 10px;
+}
+
+.total-score {
+    margin: 20px;
+    font-size: 18px;
+}
+
+.start-button {
+    margin-top: 20px;
+    margin-bottom: 15px;
+    height: 30px;
+}
+
+.learn-route-link {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: black;
+}
+
+
+@media only screen and (min-width: 1000px) {
+    .word-container {
+        width: 40%;
+    }
+} 

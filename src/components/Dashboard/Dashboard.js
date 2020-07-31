@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import DashboardContext from "../../contexts/DashboardContext";
 import languageService from "../../services/language-service";
 import "./Dashboard.css";
+import { Link } from 'react-router-dom';
 
 export default class Dashboard extends Component {
   static contextType = DashboardContext;
@@ -19,14 +20,14 @@ export default class Dashboard extends Component {
   }
   renderHead() {
     const { language = {} } = this.context;
-    return <h2>{language.name}</h2>;
+    return <h2 className="sub-head">{language.name}</h2>;
   }
   renderWords() {
     const { languageWords = [] } = this.context;
     return [
       languageWords.map((word, i) => (
         <li className="word-container" key={`word ${i}`}>
-          <h4>{word.original}</h4>
+          <h4 className="dash-word">{word.original}</h4>
           <div className="word-specifics-details"></div>
           <p className="answer-count">{`correct answer count: ${word.correct_count}`}</p>
           <p className="answer-count">{`incorrect answer count: ${word.incorrect_count}`}</p>
@@ -40,12 +41,14 @@ export default class Dashboard extends Component {
     return (
       <>
         <section className="Dashboard">
-          <h2>Dashboard</h2>
+          <h2 className="sub-head">Dashboard</h2>
           {this.renderHead()}
-          <section>Total correct answers: {language.total_score}</section>
-          <a className="learn-route-link" href="/learn">
+          <section className="total-score">Total correct answers: {language.total_score}</section>
+          <button className="start-button">
+            <Link className="learn-route-link" to="/learn">
             Get to practicing!
-          </a>
+            </Link>
+          </button>
           {error ? (
             <p className="error-text">Something went wrong, please try again</p>
           ) : (

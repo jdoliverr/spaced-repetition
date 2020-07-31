@@ -70,7 +70,7 @@ class LearningRoute extends Component {
 
   render() {
     return (
-      <section>
+      <section className="translate-word-page">
         <div className="translation-div">
           {this.state.toggled ? null : <h2>Translate the word:</h2>}
           <span>{this.state.wordData.nextWord}</span>

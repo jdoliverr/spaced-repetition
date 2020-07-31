@@ -60,7 +60,7 @@ class DashboardRoute extends Component {
     };
     return (
       <DashboardContext.Provider value={value}>
-        <section>
+        <section className="dashboard-container">
           <Dashboard />
         </section>
       </DashboardContext.Provider>
