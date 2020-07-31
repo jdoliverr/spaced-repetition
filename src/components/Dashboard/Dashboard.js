@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import DashboardContext from "../../contexts/DashboardContext";
 import languageService from "../../services/language-service";
+import './Dashboard.css';
 
 export default class Dashboard extends Component {
   static contextType = DashboardContext;
@@ -24,29 +25,33 @@ export default class Dashboard extends Component {
     return [
       languageWords.map((word, i) => (
         <li className="word-container" key={`word ${i}`}>
-          <h3>{word.original}</h3>
+          <h4>{word.original}</h4>
           <div className="word-specifics-details"></div>
-          <p className="answer-count">{`Times Correct: ${word.correct_count}`}</p>
-          <p className="answer-count">{`Times Inorrect: ${word.incorrect_count}`}</p>
+          <p className="answer-count">{`correct answer count: ${word.correct_count}`}</p>
+          <p className="answer-count">{`incorrect answer count: ${word.incorrect_count}`}</p>
         </li>
       )),
     ];
   }
 
   render() {
-    console.log(this.renderWords());
-    const { error } = this.context;
+    const { error, totalScore } = this.context;
+    console.log(totalScore)    
     return (
       <>
         <section className="Dashboard">
           <h2>Dashboard</h2>
+          <h2>Test language 1</h2>
+          <section>Total correct answers:7</section>
           <a className="learn-route-link" href="/learn">
             Get to practicing!
           </a>
           {error ? (
             <p className="error-text">Something went wrong, please try again</p>
           ) : (
-            this.renderWords()
+            <ul>
+            {this.renderWords()}
+            </ul>
           )}
         </section>
       </>

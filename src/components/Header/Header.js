@@ -36,7 +36,8 @@ class Header extends Component {
     return (
       <nav className="Header">
         <h1>
-          <Link to="/">Spaced Repetition</Link>
+          Spaced repetition
+          {/* <Link to="/">Spaced Repetition</Link> */}
         </h1>
         {TokenService.hasAuthToken()
           ? this.renderLogoutLink()

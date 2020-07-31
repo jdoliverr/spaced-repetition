@@ -78,23 +78,23 @@ class LearningRoute extends Component {
         <div className="total-score"></div>
         {this.state.toggled ? (
           <>
-            <main className="score-display">
+            <main className="score-display DisplayScore" id="DisplayScore">
               <h2>
                 {this.state.nextWord.isCorrect
-                  ? "Correct!"
-                  : "Sorry, that's incorrect."}
+                  ? "You were correct! :D"
+                  : "Good try, but not quite right :("}
               </h2>
-              <p>Your total score is {this.state.nextWord.totalScore}</p>
+              <p>Your total score is:{this.state.nextWord.totalScore}</p>
             </main>
-            <main className="translation-feedback">
+            <main className="translation-feedback DisplayFeedback">
               <p>
-                {`The correct translation for ${this.state.wordData.nextWord} is ${this.state.nextWord.answer}`}
+                {`The correct translation for ${this.state.wordData.nextWord} was ${this.state.nextWord.answer} and you chose ${this.state.guess}!`}
               </p>
               <button
                 className="word-cycle-button"
                 onClick={() => this.buttonClick()}
               >
-                Next word!
+                Try another word!
               </button>
             </main>
           </>
@@ -110,18 +110,18 @@ class LearningRoute extends Component {
               className="answer-form"
               onSubmit={(e) => this.sendUserGuess(e)}
             >
-              <label id="guess-label" htmlFor="guess-input">
-                What does this word translate to?
+              <label id="guess-label" htmlFor="learn-guess-input">
+                What's the translation for this word?
               </label>
               <input
-                id="guess-input"
+                id="learn-guess-input"
                 type="text"
                 required
                 value={this.state.guess}
                 onChange={(e) => this.changeGuess(e)}
               />
               <button className="submit-button" type="submit">
-                Submit
+                Submit your answer
               </button>
             </form>
             <section className="user-tally">

@@ -17,7 +17,6 @@ const languageService = {
       });
   },
   getHead() {
-    console.log(TokenService.getAuthToken());
     return fetch(`${config.API_ENDPOINT}/language/head`, {
       method: "GET",
       headers: {

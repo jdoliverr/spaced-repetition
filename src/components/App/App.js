@@ -22,7 +22,9 @@ export default class App extends Component {
     const { hasError } = this.state
     return (
       <div className='App'>
-        <Header />
+        <header>
+          <Header />
+        </header>
         <main>
           {hasError && (
             <p>There was an error! Oh no!</p>

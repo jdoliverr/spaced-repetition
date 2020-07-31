@@ -20,7 +20,6 @@ class DashboardRoute extends Component {
   };
 
   setLanguageWords = (languageWords) => {
-    console.log(languageWords);
     this.setState({ languageWords });
   };
 
