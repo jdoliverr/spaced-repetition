@@ -84,7 +84,7 @@ class LearningRoute extends Component {
                   ? "Correct!"
                   : "Sorry, that's incorrect."}
               </h2>
-              <p>Your total score is: {this.state.nextWord.totalScore}</p>
+              <p>Your total score is {this.state.nextWord.totalScore}</p>
             </main>
             <main className="translation-feedback">
               <p>
@@ -111,7 +111,7 @@ class LearningRoute extends Component {
               onSubmit={(e) => this.sendUserGuess(e)}
             >
               <label id="guess-label" htmlFor="guess-input">
-                What's the translation for this word?
+                What does this word translate to?
               </label>
               <input
                 id="guess-input"
@@ -121,7 +121,7 @@ class LearningRoute extends Component {
                 onChange={(e) => this.changeGuess(e)}
               />
               <button className="submit-button" type="submit">
-                Submit your answer
+                Submit
               </button>
             </form>
             <section className="user-tally">
