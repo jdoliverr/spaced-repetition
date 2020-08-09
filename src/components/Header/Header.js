@@ -38,7 +38,7 @@ class Header extends Component {
     return (
       <nav className="Header">
         <h1 className="app-name-head">
-          Spaced repetition
+          Language repetition
           {/* <Link to="/">Spaced Repetition</Link> */}
         </h1>
         {TokenService.hasAuthToken()
