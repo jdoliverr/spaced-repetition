@@ -1,8 +1,14 @@
 .Button {
-  order: 1px solid #aaa;
-  background-color: #eee;
+  border: 1px solid #aaa;
+  background-color: rgb(251, 128, 186);
   font-size: 1.1em;
-  border-radius: 4px;
+  border-radius: 5px;
   padding: 8px 12px;
+  font-weight: bold;
+}
+
+.start-button, .submit-button, .word-cycle-button {
+  background-color: rgb(251, 128, 186);
+  border-radius: 5px;
   font-weight: bold;
 }

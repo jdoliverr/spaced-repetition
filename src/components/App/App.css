@@ -47,10 +47,12 @@ form {
 
 .LoginForm {
   height: 250px;
+  background-color: rgb(106, 255, 193);
 }
 
 .registration-form {
   height: 400px;
+  background-color: rgb(106, 255, 193);
 }
 
 .login-head {
@@ -69,6 +71,10 @@ form {
 .word-cycle-button {
   height: 40px;
   margin: 15px;
+}
+
+.word-to-learn {
+  font-size: 30px;
 }
 
 @media only screen and (min-width: 700px) {

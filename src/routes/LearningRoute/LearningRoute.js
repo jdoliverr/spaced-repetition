@@ -73,7 +73,7 @@ class LearningRoute extends Component {
       <section className="translate-word-page">
         <div className="translation-div">
           {this.state.toggled ? null : <h2>Translate the word:</h2>}
-          <span>{this.state.wordData.nextWord}</span>
+          <span className='word-to-learn'>{this.state.wordData.nextWord}</span>
         </div>
         <div className="total-score"></div>
         {this.state.toggled ? (
